@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+
+        <!-- Formulaire de connexion -->
+        <div class="col-lg-6 shadow p-4">
+            <h3 class="mb-4">Connexion</h3>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Entrez votre email" required>
+                    <small class="form-text text-muted">Nous ne partagerons jamais votre email.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+
+        <!-- Image -->
+        <div class="col-lg-6 shadow p-4">
+            <img src="https://img.freepik.com/photos-gratuite/piscine-hotel_74190-1259.jpg?semt=ais_hybrid&w=740&q=80" 
+                 alt="Piscine d'hôtel" class="img-fluid shadow rounded">
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
